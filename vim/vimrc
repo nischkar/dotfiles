@@ -1,0 +1,39 @@
+if v:version < 802
+	packadd! dracula
+endif
+
+set foldmethod=indent
+let g:netrw_browse_split =2
+
+" Le Plug
+call plug#begin()
+	Plug 'preservim/nerdtree'
+  Plug 'ryanoasis/vim-devicons'
+	
+  Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
+
+	Plug 'dense-analysis/ale'
+	Plug 'OmniSharp/omnisharp-vim'
+call plug#end()
+
+
+" Editor Settings
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set foldlevel=1
+set relativenumber
+set noswapfile
+" set encoding=UTF-8
+
+" NERDTree Settings
+nnoremap <C-t> :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=60
+
+autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+
+" aesthetics
+syntax enable
+colorscheme dracula
