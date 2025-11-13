@@ -8,13 +8,15 @@ let g:netrw_browse_split =2
 " Le Plug
 call plug#begin()
 	Plug 'preservim/nerdtree'
-  Plug 'ryanoasis/vim-devicons'
+	Plug 'ryanoasis/vim-devicons'
 	
-  Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
 
 	Plug 'dense-analysis/ale'
 	Plug 'OmniSharp/omnisharp-vim'
+	Plug 'prabirshrestha/asyncomplete.vim'
+
 call plug#end()
 
 
